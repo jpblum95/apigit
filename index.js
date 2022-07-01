@@ -11,7 +11,7 @@ app.get('/', async function (req, res, next) {
   res.render('main');
 });
 
-app.get('/user/:username', async function (req, res, next) {
+app.get('/user/:username' , async function (req, res, next) {
   let usuarioBuscador = req.params.username;
   const response = await fetch(`https://api.github.com/users/${usuarioBuscador}`);
   const data = await response.json();
@@ -19,11 +19,12 @@ app.get('/user/:username', async function (req, res, next) {
     login: data.login,
     avatar: data.avatar_url,
     nombre: data.name,
-    repositorio: data.repos_url
+    repositorio: data.public_repos
   };
   console.log(data2);
-  res.render('main2', data2);
-  return res.json({ data: data2 });
+  console.log(data);
+  res.render('main2', {data: data2});
+  //return res.json({ data: data2 });
   //entrando a localhost:3000/user aparece data en consola.
 });
 

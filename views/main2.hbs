@@ -11,11 +11,11 @@
 <body>
 <h1>Usuario</h1>
     <div id="infoUsuarioBuscado">
-        <ul>
-            {{#each data2}}
-            <li> {{this}} </li>
-            {{/each}}
-        </ul>
+         <h2>{{data.nombre}}</h2>
+        <img src="{{data.avatar}}" src="{{data.nombre}}">
+    </div>
+    <div>
+        <p>El número de repositorios públicos que tiene es de: {{data.repositorio}}</p>
     </div>
 </body>
 
