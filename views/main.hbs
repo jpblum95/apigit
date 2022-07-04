@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Bievenido, ingresa el usuario de git para obtener su informacion</h1>
 
     <div name="barra">
-    <form action="/user" method="post" >
-        <input type="text" name="user" id="usuario" autocomplete="off" placeholder="usuario github" required>
-        <button type="submit" value="buscar">Enviar</button>
-    </form>
+        <form method="GET" id="myForm" enctype="multipart/form-data">
+            <input type="text" id="myInput">
+            <input type="button" onclick="mySubmitFunction()" value="Submit">
+        </form>
     </div>
+
+    <script>
+        function mySubmitFunction() {
+            var myForm = document.getElementById("myForm");     // Get form element
+            var myInput = document.getElementById("myInput");   // Get input element
+            var inputValue = myInput.value;                     // Get input value
+            myForm.action = "user/" + inputValue + "";         // Action path
+            window.location = myForm.action;                    // Remove trailing question mark
+            myForm.submit();                                    // Submit the form
+        }
+    </script>
 </body>
+
 </html>

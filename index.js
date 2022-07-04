@@ -11,7 +11,7 @@ app.get('/', async function (req, res, next) {
   res.render('main');
 });
 
-app.get('/user/:username' , async function (req, res, next) {
+app.get('/user/:username', async function (req, res, next) {
   let usuarioBuscador = req.params.username;
   const response = await fetch(`https://api.github.com/users/${usuarioBuscador}`);
   const data = await response.json();
@@ -23,18 +23,11 @@ app.get('/user/:username' , async function (req, res, next) {
   };
   console.log(data2);
   console.log(data);
-  res.render('main2', {data: data2});
+  res.render('main2', { data: data2 });
   //return res.json({ data: data2 });
   //entrando a localhost:3000/user aparece data en consola.
 });
 
-/*
-router.get('/:name', function(req, res, next) {
-  var name = req.params.name;
-  var user = data.filter(u => u.name == name );
-  return res.json({ message: 'Users Show', data: user });
-});
-*/
 
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
