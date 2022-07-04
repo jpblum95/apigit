@@ -7,6 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Immune</title>
 </head>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #15202B;
+}
+
+.shadow {
+  display: grid;
+place-items: center;
+  position: relative;
+  margin: 20px auto 0;
+  width: 700px;
+  height: 350px;
+  background: #15202B;
+}
+
+.shadow::before,
+.shadow::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  background: linear-gradient(45deg,red,blue,green,yellow,#e11d74,black,#ffff00,#aa0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 25s linear infinite;
+}
+
+.shadow::after {
+  filter: blur(25px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+</style>
 <body><center>
     <h1>Bievenido, ingresa el usuario de git para obtener su informacion</h1>
 
@@ -16,8 +65,9 @@
             <input type="button" onclick="mySubmitFunction()" value="Submit">
         </form>
     </div>
-    <br>
-    <h2>Usuarios recomendados por la comunidad de immune:</h2>
+    <br><hr>
+    <div class="shadow">
+    <h2>Usuarios recomendados por la comunidad de Immune</h2>
         <li>Salme92</li>
         <li>Esteban0007</li>
         <li>Rayderfalcon</li>
@@ -25,6 +75,7 @@
         <li>ISMAGM95s</li>
         <li>charmelo</li>
         <li>jpblum95</li>
+        </div>
 </center>
     <script>
         function mySubmitFunction() {
