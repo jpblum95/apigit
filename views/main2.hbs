@@ -7,16 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+    body {
+        background-color: cadetblue;
+    }
+    span {
+        font-size: xx-large;
+    }
+</style>
 <body>
-<h1>Usuario</h1>
+    <center>
+<h1>Usuario:</h1>
     <div id="infoUsuarioBuscado">
-         <h2>{{data.nombre}}</h2>
+         <h2><u>{{data.nombre}}</u></h2>
         <img src="{{data.avatar}}" src="{{data.nombre}}">
     </div>
     <div>
-        <p>El número de repositorios públicos que tiene es de: {{data.repositorio}}</p>
+        <p>El número de repositorios públicos que tiene es de:<br>
+        <span> {{data.repositorio}}</span></p>
     </div>
+    </center>
 </body>
 
 </html>
