@@ -2,91 +2,94 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Immune</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Immune</title>
 </head>
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #15202B;
-}
-
-.shadow {
-  display: grid;
-place-items: center;
-  position: relative;
-  margin: 20px auto 0;
-  width: 700px;
-  height: 350px;
-  background: #15202B;
-}
-
-.shadow::before,
-.shadow::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  background: linear-gradient(45deg,red,blue,green,yellow,#e11d74,black,#ffff00,#aa0000);
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: animate 25s linear infinite;
-}
-
-.shadow::after {
-  filter: blur(25px);
-}
-
-@keyframes animate {
-  0% {
-    background-position: 0 0;
+  body {
+    margin: 0;
+    padding: 0;
+    background: grey;
   }
 
-  50% {
-    background-position: 400% 0;
+  .shadow {
+    display: grid;
+    place-items: center;
+    position: relative;
+    margin: 20px auto ;
+    width: 700px;
+    height: 350px;
+    background: grey;
   }
 
-  100% {
-    background-position: 0 0;
+  .shadow::before,
+  .shadow::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background: linear-gradient(45deg, red, blue, green, yellow, #e11d74, black, #ffff00, #aa0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 25s linear infinite;
   }
-}
+
+  .shadow::after {
+    filter: blur(25px);
+  }
+
+  @keyframes animate {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
 </style>
-<body><center>
+
+<body>
+  <center>
     <h1>Bievenido, ingresa el usuario de git para obtener su informacion</h1>
 
     <div name="barra">
-        <form method="GET" id="myForm" enctype="multipart/form-data">
-            <input type="text" id="myInput" autocomplete="off" placeholder="Usuario de github">
-            <input type="button" onclick="mySubmitFunction()" value="Submit">
-        </form>
+      <form method="GET" id="myForm" enctype="multipart/form-data">
+        <input type="text" id="myInput" autocomplete="off" placeholder="Usuario de github">
+        <input type="button" onclick="mySubmitFunction()" value="Submit">
+      </form>
     </div>
-    <br><hr>
+    <br>
+    <hr>
     <div class="shadow">
-    <h2>Usuarios recomendados por la comunidad de Immune</h2>
-        <li>Salme92</li>
-        <li>Esteban0007</li>
-        <li>Rayderfalcon</li>
-        <li>ToRomero</li>
-        <li>ISMAGM95s</li>
-        <li>charmelo</li>
-        <li>jpblum95</li>
-        </div>
-</center>
-    <script>
-        function mySubmitFunction() {
-            var myForm = document.getElementById("myForm");     // Get form element
-            var myInput = document.getElementById("myInput");   // Get input element
-            var inputValue = myInput.value;                     // Get input value
-            myForm.action = "user/" + inputValue + "";         // Action path
-            window.location = myForm.action;                    // Remove trailing question mark
-            myForm.submit();                                    // Submit the form
-        }
-    </script>
+      <h2>Usuarios recomendados por la comunidad de Immune</h2>
+      <li>Salme92</li>
+      <li>Esteban0007</li>
+      <li>Rayderfalcon</li>
+      <li>ToRomero</li>
+      <li>ISMAGM95s</li>
+      <li>charmelo</li>
+      <li>jpblum95</li>
+    </div>
+  </center>
+  <script>
+    function mySubmitFunction() {
+      var myForm = document.getElementById("myForm");     // Get form element
+      var myInput = document.getElementById("myInput");   // Get input element
+      var inputValue = myInput.value;                     // Get input value
+      myForm.action = "user/" + inputValue + "";         // Action path
+      window.location = myForm.action;                    // Remove trailing question mark
+      myForm.submit();                                    // Submit the form
+    }
+  </script>
 </body>
 
 </html>
